@@ -17,7 +17,7 @@ links.forEach(link => {
 });
 
 /* ACTIVE MENU on scroll */
-const sections = document.querySelectorAll(".page[id]");
+const sections = document.querySelectorAll(".page[id], #activity");
 const observer = new IntersectionObserver(
     entries => {
         entries.forEach(entry => {
