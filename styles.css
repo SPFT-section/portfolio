@@ -487,6 +487,17 @@ body::before{
     padding:8px 14px;
     font-size:12px;
 }
+.cert-more + .cert-more{
+    margin-top:8px;
+}
+.cert-more-secondary{
+    background:transparent;
+    border:1px solid rgba(20,30,45,.14);
+    color:#4a5563;
+}
+.cert-more-secondary:hover{
+    background:#eef1f5;
+}
 .cert-more i{
     width:13px;
     height:13px;
