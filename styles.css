@@ -377,6 +377,14 @@ body::before{
     grid-template-columns:repeat(2, 1fr);
     gap:14px;
 }
+.activity-grid--asymmetric{
+    grid-template-columns:1.3fr 1fr;
+    grid-template-rows:repeat(2, 1fr);
+}
+.activity-grid--asymmetric .activity-card--large{
+    grid-row:1 / span 2;
+    height:auto;
+}
 .activity-card{
     position:relative;
     border-radius:16px;
@@ -417,6 +425,31 @@ body::before{
     padding:18px;
     background:linear-gradient(to top, rgba(10,15,25,.92), transparent);
     color:#fff;
+}
+.activity-grid--asymmetric .activity-card:not(.activity-card--large),
+.activity-grid--asymmetric .activity-note{
+    height:123px;
+}
+.activity-note{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:6px;
+    border-radius:16px;
+    padding:16px 18px;
+}
+.activity-note small{
+    font-size:10px;
+    letter-spacing:1.5px;
+    color:#168cff;
+    font-weight:700;
+    text-transform:uppercase;
+}
+.activity-note p{
+    margin:0;
+    font-size:12px;
+    line-height:1.6;
+    color:#4a5563;
 }
 .activity-overlay small{
     font-size:10px;
@@ -707,6 +740,18 @@ body::before{
     }
     #about .activity-overlay{
         padding:16px;
+    }
+    #about .activity-grid--asymmetric{
+        grid-template-rows:none;
+    }
+    #about .activity-grid--asymmetric .activity-card--large{
+        grid-row:auto;
+        height:240px;
+    }
+    #about .activity-grid--asymmetric .activity-card:not(.activity-card--large),
+    #about .activity-grid--asymmetric .activity-note{
+        height:auto;
+        min-height:150px;
     }
 }
 /* ABOUT ME — small mobile spec */
