@@ -2,112 +2,328 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>อภินันท์ พงษ์คำ — แฟ้มสะสมผลงาน</title>
-<meta name="description" content="แฟ้มสะสมผลงานของอภินันท์ พงษ์คำ นักเรียนชั้นมัธยมศึกษาปีที่ 6 โรงเรียนเกลี้ยงวิทยา">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>อภินันท์ พงษ์คำ | Portfolio</title>
 <link rel="stylesheet" href="styles.css">
+<script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-<a class="skip-link" href="#main">ข้ามไปยังเนื้อหาหลัก</a>
 
-<header class="site">
-  <div class="wrap">
-    <a class="brand" href="index.html">
-      <svg class="seal-mini" viewBox="0 0 40 40" aria-hidden="true">
-        <circle cx="20" cy="20" r="18" fill="none" stroke="#A9782E" stroke-width="1.4"/>
-        <circle cx="20" cy="20" r="13" fill="#A9782E" opacity="0.12"/>
-        <path d="M20 10 L22.2 16.6 L29 16.6 L23.5 20.8 L25.6 27.4 L20 23.2 L14.4 27.4 L16.5 20.8 L11 16.6 L17.8 16.6 Z" fill="#A9782E"/>
-      </svg>
-      อภินันท์ พงษ์คำ
-    </a>
-    <button class="nav-toggle" aria-label="เปิดเมนู" aria-expanded="false">เมนู ☰</button>
-    <nav class="nav-links" aria-label="เมนูหลัก">
-      <a href="index.html" aria-current="page">หน้าแรก</a>
-      <a href="about.html">ประวัติส่วนตัว</a>
-      <a href="certificates.html">เกียรติบัตรและผลงาน</a>
-      <a href="knowledge.html">คลังความรู้</a>
-      <a href="contact.html">ช่องทางการติดต่อ</a>
+<!-- =================================================
+     SIDEBAR
+================================================= -->
+<aside class="sidebar glass" id="sidebar">
+    <div class="brand">
+        <div class="brand-mark">
+            <i data-lucide="layers"></i>
+        </div>
+        <div class="brand-text">
+            <strong>APINANAN</strong>
+            <span>PORTFOLIO</span>
+        </div>
+    </div>
+    <nav class="nav">
+        <a href="#home" class="active">
+            <i data-lucide="house"></i>
+            <span>หน้าแรก</span>
+        </a>
+        <a href="#about">
+            <i data-lucide="user-round"></i>
+            <span>ประวัติส่วนตัว</span>
+        </a>
+        <a href="#activity">
+            <i data-lucide="images"></i>
+            <span>กิจกรรม</span>
+        </a>
+        <a href="#works">
+            <i data-lucide="award"></i>
+            <span>เกียรติบัตรและผลงาน</span>
+        </a>
+        <a href="#knowledge">
+            <i data-lucide="book-open"></i>
+            <span>คลังความรู้</span>
+        </a>
+        <a href="#contact">
+            <i data-lucide="mail"></i>
+            <span>ติดต่อ</span>
+        </a>
     </nav>
-  </div>
-</header>
+    <button class="toggle" id="toggleSidebar">
+        <i data-lucide="panel-left-close"></i>
+    </button>
+</aside>
 
-<main id="main">
-  <div class="wrap">
+<main class="main">
+<div class="wrap">
 
-    <section class="hero" style="margin-top:8px;">
-      <div>
-        <span class="eyebrow">แฟ้มสะสมผลงาน</span>
-        <h1>อภินันท์ พงษ์คำ</h1>
-        <p class="role">นักเรียนชั้นมัธยมศึกษาปีที่ 6 ห้อง 1 โรงเรียนเกลี้ยงวิทยา</p>
-        <p style="max-width:52ch; color:var(--ink-soft); margin-top:14px;">
-          เว็บไซต์นี้รวบรวมประวัติส่วนตัว เกียรติบัตร ผลงาน และความรู้ที่ได้สั่งสมไว้ในรั้วโรงเรียน
-          เพื่อใช้เป็นแฟ้มสะสมผลงานสำหรับการศึกษาต่อและแนะนำตัวเอง
+<!-- =================================================
+     HOME
+================================================= -->
+<section id="home" class="page hero">
+    <div class="hero-content">
+        <div class="kicker">PERSONAL PORTFOLIO</div>
+        <h1>
+            สวัสดีครับ
+            <br>
+            <span class="gradient">อภินันท์ พงษ์คำ</span>
+        </h1>
+        <p>
+            แฟ้มสะสมผลงานออนไลน์ ที่รวบรวมประวัติ กิจกรรม
+            เกียรติบัตร ผลงาน และความรู้ที่ผมสนใจ
         </p>
         <div class="hero-actions">
-          <a class="btn primary" href="certificates.html">ดูเกียรติบัตรและผลงาน</a>
-          <a class="btn ghost" href="contact.html">ช่องทางการติดต่อ</a>
+            <a href="#about" class="btn primary">
+                <i data-lucide="user-round"></i>
+                ดูประวัติ
+            </a>
+            <a href="#works" class="btn">
+                <i data-lucide="award"></i>
+                ดูผลงาน
+            </a>
         </div>
-      </div>
+    </div>
+    <div class="glass hero-card">
+        <div class="hero-photo">
+            <img src="assets/profile.jpg" alt="อภินันท์ พงษ์คำ" onerror="this.parentElement.classList.add('img-fallback')">
+        </div>
+    </div>
+</section>
 
-      <svg class="seal" viewBox="0 0 200 200" role="img" aria-label="ตราสัญลักษณ์แฟ้มสะสมผลงาน">
-        <g class="ring">
-          <circle cx="100" cy="100" r="92" fill="none" stroke="#A9782E" stroke-width="1.2" stroke-dasharray="3 7"/>
-        </g>
-        <circle cx="100" cy="100" r="74" fill="#F7F3E8" stroke="#A9782E" stroke-width="2"/>
-        <circle cx="100" cy="100" r="62" fill="none" stroke="#A9782E" stroke-width="1"/>
-        <!-- laurel left -->
-        <g stroke="#33605C" stroke-width="2.4" fill="none" stroke-linecap="round">
-          <path d="M78 132 C64 122 58 106 62 88"/>
-          <path d="M63 118 L72 116"/>
-          <path d="M60 104 L70 103"/>
-          <path d="M60 90 L69 91"/>
-        </g>
-        <g stroke="#33605C" stroke-width="2.4" fill="none" stroke-linecap="round">
-          <path d="M122 132 C136 122 142 106 138 88"/>
-          <path d="M137 118 L128 116"/>
-          <path d="M140 104 L130 103"/>
-          <path d="M140 90 L131 91"/>
-        </g>
-        <text x="100" y="95" text-anchor="middle" font-family="'Noto Serif Thai', serif" font-weight="700" font-size="30" fill="#1B2340">AP</text>
-        <text x="100" y="118" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="9" letter-spacing="2" fill="#A9782E">M.6 · 2026</text>
-      </svg>
-    </section>
+<!-- =================================================
+     ABOUT
+================================================= -->
+<section id="about" class="page">
+    <div class="section-header">
+        <h2>ประวัติ<span class="gradient">ส่วนตัว</span></h2>
+        <p>ABOUT ME</p>
+    </div>
+    <div class="profile-grid">
+        <div class="glass profile-visual">
+            <div class="profile-circle">
+                <img src="assets/profile.jpg" alt="อภินันท์ พงษ์คำ" onerror="this.parentElement.classList.add('img-fallback')">
+            </div>
+        </div>
+        <div class="glass profile-info">
+            <h3>อภินันท์ พงษ์คำ</h3>
+            <p>
+                ปัจจุบันกำลังศึกษาอยู่ระดับชั้นมัธยมศึกษาปีที่ 6
+                ห้อง 1 โรงเรียนเกลี้ยงวิทยา
+            </p>
+            <div class="info-list">
+                <div class="info">
+                    <span>Name</span>
+                    <strong>อภินันท์ พงษ์คำ</strong>
+                </div>
+                <div class="info">
+                    <span>Birthday</span>
+                    <strong>6 สิงหาคม 2008</strong>
+                </div>
+                <div class="info">
+                    <span>Age</span>
+                    <strong>17 ปี</strong>
+                </div>
+                <div class="info">
+                    <span>School</span>
+                    <strong>โรงเรียนเกลี้ยงวิทยา</strong>
+                </div>
+                <div class="info">
+                    <span>Education</span>
+                    <strong>ม.6 ห้อง 1</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <section aria-labelledby="quick-h">
-      <h2 id="quick-h">ทางลัดในเว็บไซต์</h2>
-      <div class="grid-2" style="margin-top:22px;">
-        <a class="card" href="about.html" style="text-decoration:none; color:inherit;">
-          <span class="eyebrow">01</span>
-          <h3 style="margin-top:8px;">ประวัติส่วนตัว</h3>
-          <p style="color:var(--ink-soft); margin:0;">ข้อมูลทั่วไปและการศึกษา</p>
-        </a>
-        <a class="card" href="certificates.html" style="text-decoration:none; color:inherit;">
-          <span class="eyebrow">02</span>
-          <h3 style="margin-top:8px;">เกียรติบัตรและผลงาน</h3>
-          <p style="color:var(--ink-soft); margin:0;">รางวัลและชิ้นงานที่ภาคภูมิใจ</p>
-        </a>
-        <a class="card" href="knowledge.html" style="text-decoration:none; color:inherit;">
-          <span class="eyebrow">03</span>
-          <h3 style="margin-top:8px;">คลังความรู้</h3>
-          <p style="color:var(--ink-soft); margin:0;">สรุปความรู้และบทเรียนที่น่าสนใจ</p>
-        </a>
-        <a class="card" href="contact.html" style="text-decoration:none; color:inherit;">
-          <span class="eyebrow">04</span>
-          <h3 style="margin-top:8px;">ช่องทางการติดต่อ</h3>
-          <p style="color:var(--ink-soft); margin:0;">อีเมลและช่องทางติดต่ออื่น ๆ</p>
-        </a>
-      </div>
-    </section>
+<!-- =================================================
+     ACTIVITY
+================================================= -->
+<section id="activity" class="page">
+    <div class="section-header">
+        <h2>กิจกรรม<span class="gradient">และประสบการณ์</span></h2>
+        <p>ACTIVITY &amp; EXPERIENCE</p>
+    </div>
+    <div class="activity-grid">
+        <div class="activity-card">
+            <img src="assets/activity-1.jpg" alt="กิจกรรม" onerror="this.parentElement.classList.add('img-fallback')">
+            <div class="activity-overlay">
+                <small>ACTIVITY 01</small>
+                <h3>กิจกรรมที่เข้าร่วม</h3>
+                <p>ประสบการณ์จากการเข้าร่วมกิจกรรมและการทำงานร่วมกับผู้อื่น</p>
+            </div>
+        </div>
+        <div class="activity-card">
+            <img src="assets/activity-2.jpg" alt="กิจกรรม" onerror="this.parentElement.classList.add('img-fallback')">
+            <div class="activity-overlay">
+                <small>ACTIVITY 02</small>
+                <h3>การเรียนรู้จากประสบการณ์</h3>
+                <p>ฝึกการทำงานเป็นทีม การสื่อสาร และความรับผิดชอบ</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-  </div>
+<!-- =================================================
+     WORKS
+================================================= -->
+<section id="works" class="page">
+    <div class="section-header">
+        <h2>เกียรติบัตร<span class="gradient">และผลงาน</span></h2>
+        <p>CERTIFICATES &amp; WORKS</p>
+    </div>
+    <div class="cert-grid">
+        <div class="glass cert-card">
+            <div class="icon-box">
+                <i data-lucide="award"></i>
+            </div>
+            <div>
+                <h3>เกียรติบัตร</h3>
+                <p>รวบรวมเกียรติบัตร รางวัล และหลักฐานการเข้าร่วมกิจกรรม</p>
+            </div>
+        </div>
+        <div class="glass cert-card">
+            <div class="icon-box">
+                <i data-lucide="folder"></i>
+            </div>
+            <div>
+                <h3>ผลงาน</h3>
+                <p>ผลงานที่สร้างขึ้นจากการเรียนรู้และการทดลองทำด้วยตนเอง</p>
+            </div>
+        </div>
+        <div class="glass cert-card">
+            <div class="icon-box">
+                <i data-lucide="presentation"></i>
+            </div>
+            <div>
+                <h3>การนำเสนอ</h3>
+                <p>ผลงานและกิจกรรมที่เกี่ยวข้องกับการนำเสนอ</p>
+            </div>
+        </div>
+        <div class="glass cert-card">
+            <div class="icon-box">
+                <i data-lucide="sparkles"></i>
+            </div>
+            <div>
+                <h3>ผลงานที่กำลังพัฒนา</h3>
+                <p>พื้นที่สำหรับเพิ่มผลงานใหม่ในอนาคต</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =================================================
+     KNOWLEDGE
+================================================= -->
+<section id="knowledge" class="page">
+    <div class="section-header">
+        <h2>คลัง<span class="gradient">ความรู้</span></h2>
+        <p>KNOWLEDGE HUB</p>
+    </div>
+    <div class="knowledge-grid">
+        <a class="glass knowledge" href="https://developer.mozilla.org/" target="_blank" rel="noopener">
+            <div class="knowledge-icon">
+                <i data-lucide="code-2"></i>
+            </div>
+            <div>
+                <h3>เทคโนโลยีและเว็บไซต์</h3>
+                <p>HTML, CSS, JavaScript และการสร้างเว็บไซต์</p>
+            </div>
+        </a>
+        <a class="glass knowledge" href="https://ai.google/" target="_blank" rel="noopener">
+            <div class="knowledge-icon">
+                <i data-lucide="brain-circuit"></i>
+            </div>
+            <div>
+                <h3>ปัญญาประดิษฐ์</h3>
+                <p>ความรู้เกี่ยวกับ AI และเทคโนโลยีสมัยใหม่</p>
+            </div>
+        </a>
+        <a class="glass knowledge" href="https://www.khanacademy.org/computing" target="_blank" rel="noopener">
+            <div class="knowledge-icon">
+                <i data-lucide="terminal"></i>
+            </div>
+            <div>
+                <h3>การเขียนโปรแกรม</h3>
+                <p>Programming และ Computer Science</p>
+            </div>
+        </a>
+        <a class="glass knowledge" href="https://www.khanacademy.org/" target="_blank" rel="noopener">
+            <div class="knowledge-icon">
+                <i data-lucide="lightbulb"></i>
+            </div>
+            <div>
+                <h3>การเรียนรู้ด้วยตนเอง</h3>
+                <p>แหล่งเรียนรู้ออนไลน์และการพัฒนาทักษะ</p>
+            </div>
+        </a>
+    </div>
+</section>
+
+<!-- =================================================
+     VIDEO
+================================================= -->
+<section class="page video-section">
+    <div class="section-header">
+        <h2>วิดีโอ<span class="gradient">ความรู้</span></h2>
+        <p>VIDEO</p>
+    </div>
+    <div class="glass video-card">
+        <div class="video-frame">
+            <iframe
+                src="https://www.youtube.com/embed/Z55vxrVi-9c"
+                title="Knowledge Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<!-- =================================================
+     CONTACT
+================================================= -->
+<section id="contact" class="page">
+    <div class="section-header">
+        <h2>ช่องทาง<span class="gradient">การติดต่อ</span></h2>
+        <p>CONTACT</p>
+    </div>
+    <div class="contact-grid">
+        <div class="glass contact-card">
+            <div class="contact-item">
+                <i data-lucide="mail"></i>
+                <div>
+                    <span>EMAIL</span>
+                    <strong>sunmindsssa@gmail.com</strong>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i data-lucide="school"></i>
+                <div>
+                    <span>SCHOOL</span>
+                    <strong>โรงเรียนเกลี้ยงวิทยา</strong>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i data-lucide="graduation-cap"></i>
+                <div>
+                    <span>EDUCATION</span>
+                    <strong>ม.6 ห้อง 1</strong>
+                </div>
+            </div>
+        </div>
+        <div class="glass contact-card">
+            <h3>ขอบคุณที่เข้าชม</h3>
+            <p>ขอบคุณสำหรับการเยี่ยมชม Portfolio ของผม</p>
+            <a class="btn primary" href="mailto:sunmindsssa@gmail.com">
+                <i data-lucide="send"></i>
+                ติดต่อผม
+            </a>
+        </div>
+    </div>
+</section>
+
+</div>
 </main>
-
-<footer class="site">
-  <div class="wrap">
-    <span>© 2026 อภินันท์ พงษ์คำ</span>
-    <span>โรงเรียนเกลี้ยงวิทยา</span>
-  </div>
-</footer>
 
 <script src="script.js"></script>
 </body>
