@@ -3,11 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="แฟ้มสะสมผลงานออนไลน์ของ อภินันท์ พงษ์คำ">
 <title>อภินันท์ พงษ์คำ | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
+
+<!-- ambient background -->
+<div class="bg" aria-hidden="true">
+    <div class="blob blob-a"></div>
+    <div class="blob blob-b"></div>
+    <div class="blob blob-c"></div>
+    <div class="grid-overlay"></div>
+</div>
+
+<!-- scroll progress -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- =================================================
+     MOBILE TOPBAR
+================================================= -->
+<header class="topbar glass" id="topbar">
+    <button class="icon-btn" id="menuBtn" aria-label="เปิดเมนู" aria-expanded="false">
+        <i data-lucide="menu"></i>
+    </button>
+    <div class="topbar-brand">
+        <span class="dot"></span>
+        <strong>APINANAN</strong>
+    </div>
+</header>
+<div class="backdrop" id="backdrop" aria-hidden="true"></div>
 
 <!-- =================================================
      SIDEBAR
@@ -15,42 +44,45 @@
 <aside class="sidebar glass" id="sidebar">
     <div class="brand">
         <div class="brand-mark">
-            <i data-lucide="layers"></i>
+            <i data-lucide="sparkles"></i>
         </div>
         <div class="brand-text">
             <strong>APINANAN</strong>
             <span>PORTFOLIO</span>
         </div>
+        <button class="icon-btn sidebar-close" id="closeBtn" aria-label="ปิดเมนู">
+            <i data-lucide="x"></i>
+        </button>
     </div>
-    <nav class="nav">
+    <nav class="nav" id="nav" aria-label="เมนูหลัก">
         <a href="#home" class="active">
-            <i data-lucide="house"></i>
-            <span>หน้าแรก</span>
+            <i data-lucide="house"></i><span>หน้าแรก</span>
         </a>
         <a href="#about">
-            <i data-lucide="user-round"></i>
-            <span>ประวัติส่วนตัว</span>
+            <i data-lucide="user-round"></i><span>ประวัติส่วนตัว</span>
         </a>
         <a href="#activity">
-            <i data-lucide="images"></i>
-            <span>กิจกรรม</span>
+            <i data-lucide="images"></i><span>กิจกรรม</span>
         </a>
         <a href="#works">
-            <i data-lucide="award"></i>
-            <span>เกียรติบัตรและผลงาน</span>
+            <i data-lucide="award"></i><span>เกียรติบัตรและผลงาน</span>
         </a>
         <a href="#knowledge">
-            <i data-lucide="book-open"></i>
-            <span>คลังความรู้</span>
+            <i data-lucide="book-open"></i><span>คลังความรู้</span>
         </a>
         <a href="#contact">
-            <i data-lucide="mail"></i>
-            <span>ติดต่อ</span>
+            <i data-lucide="mail"></i><span>ติดต่อ</span>
         </a>
     </nav>
-    <button class="toggle" id="toggleSidebar">
-        <i data-lucide="panel-left-close"></i>
-    </button>
+    <div class="nav-indicator" id="navIndicator" aria-hidden="true"></div>
+    <div class="sidebar-footer">
+        <button class="toggle" id="toggleSidebar" aria-label="ย่อเมนู">
+            <i data-lucide="panel-left-close"></i>
+        </button>
+        <a class="github-chip" href="https://github.com/SPFT-section" target="_blank" rel="noopener">
+            <i data-lucide="github"></i><span>GitHub</span>
+        </a>
+    </div>
 </aside>
 
 <main class="main">
@@ -59,121 +91,96 @@
 <!-- =================================================
      HOME
 ================================================= -->
-<section id="home" class="page hero">
+<section id="home" class="page hero reveal">
     <div class="hero-content">
-        <div class="kicker">PERSONAL PORTFOLIO</div>
-        <h1>
-            สวัสดีครับ
-            <br>
-            <span class="gradient">อภินันท์ พงษ์คำ</span>
-        </h1>
-        <p>
-            แฟ้มสะสมผลงานออนไลน์ ที่รวบรวมประวัติ กิจกรรม
-            เกียรติบัตร ผลงาน และความรู้ที่ผมสนใจ
-        </p>
+        <span class="pill"><i data-lucide="sparkle"></i> PERSONAL PORTFOLIO</span>
+        <h1>สวัสดีครับ<br><span class="gradient">อภินันท์ พงษ์คำ</span></h1>
+        <p>แฟ้มสะสมผลงานออนไลน์ ที่รวบรวมประวัติ กิจกรรม เกียรติบัตร ผลงาน และความรู้ที่ผมสนใจ</p>
         <div class="hero-actions">
-            <a href="#about" class="btn primary">
-                <i data-lucide="user-round"></i>
-                ดูประวัติ
-            </a>
-            <a href="#works" class="btn">
-                <i data-lucide="award"></i>
-                ดูผลงาน
-            </a>
+            <a href="#about" class="btn primary"><i data-lucide="user-round"></i>ดูประวัติ</a>
+            <a href="#works" class="btn ghost"><i data-lucide="award"></i>ดูผลงาน</a>
+        </div>
+        <div class="hero-stats">
+            <div class="stat"><strong>6+</strong><span>ปีที่เรียนรู้</span></div>
+            <div class="stat"><strong>10+</strong><span>ผลงาน</span></div>
+            <div class="stat"><strong>∞</strong><span>ความอยากรู้</span></div>
         </div>
     </div>
-    <div class="glass hero-card">
-        <div class="hero-photo">
-            <img src="assets/profile.jpg" alt="อภินันท์ พงษ์คำ" onerror="this.parentElement.classList.add('img-fallback')">
+    <div class="hero-visual">
+        <div class="glass card-wrap">
+            <div class="orb"></div>
+            <div class="avatar">
+                <img src="assets/profile.jpg" alt="อภินันท์ พงษ์คำ" data-fallback="อภินันท์">
+            </div>
+        </div>
+        <div class="glass float-chip chip-top"><i data-lucide="rocket"></i> นักพัฒนาเว็บ</div>
+        <div class="glass float-chip chip-bottom"><i data-lucide="palette"></i> Creative</div>
+    </div>
+</section>
+
+<!-- =================================================
+     ABOUT
+================================================= -->
+<section id="about" class="page reveal">
+    <div class="section-header">
+        <span class="sec-tag">ABOUT ME</span>
+        <h2>ประวัติ <span class="gradient">ส่วนตัว</span></h2>
+        <div class="sec-line"></div>
+    </div>
+    <div class="profile-grid">
+        <div class="glass profile-visual reveal" data-delay="1">
+            <div class="photo-frame">
+                <img src="assets/profile.jpg" alt="อภินันท์ พงษ์คำ" data-fallback="อภินันท์">
+            </div>
+        </div>
+        <div class="glass profile-info reveal" data-delay="2">
+            <h3>อภินันท์ พงษ์คำ</h3>
+            <p>นักเรียนมัธยมศึกษาปีที่ 6 ห้อง 1 ที่ชื่นชอบการออกแบบ การเขียนเว็บไซต์ และการเรียนรู้สิ่งใหม่ด้วยตนเอง</p>
+            <div class="info-list">
+                <div class="info"><span>Name</span><strong>อภินันท์ พงษ์คำ</strong></div>
+                <div class="info"><span>Birthday</span><strong>6 สิงหาคม 2008</strong></div>
+                <div class="info"><span>Age</span><strong>17 ปี</strong></div>
+                <div class="info"><span>School</span><strong>โรงเรียนเกลี้ยงวิทยา</strong></div>
+                <div class="info"><span>Education</span><strong>ม.6 ห้อง 1</strong></div>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- =================================================
-     ABOUT (includes Activity + Video per spec)
+     ACTIVITY
 ================================================= -->
-<section id="about" class="page">
+<section id="activity" class="page reveal">
     <div class="section-header">
-        <h2>ประวัติ<span class="gradient">ส่วนตัว</span></h2>
-        <p>ABOUT ME</p>
+        <span class="sec-tag">ACTIVITY</span>
+        <h2>กิจกรรม</h2>
+        <div class="sec-line"></div>
     </div>
-    <div class="profile-grid">
-        <div class="glass profile-visual">
-            <div class="profile-circle">
-                <img src="assets/profile.jpg" alt="อภินันท์ พงษ์คำ" onerror="this.parentElement.classList.add('img-fallback')">
+    <div class="activity-grid">
+        <div class="activity-card large reveal" data-delay="1">
+            <img src="assets/activity-christmas.jpg" alt="กิจกรรมร้องเพลงวันคริสต์มาส" data-fallback="ACTIVITY 01">
+            <div class="activity-overlay">
+                <small>ACTIVITY 01</small>
+                <h3>ร้องเพลงวันคริสต์มาส</h3>
+                <p>ร่วมกิจกรรมร้องเพลงและแสดงในงานเฉลิมฉลองวันคริสต์มาสของโรงเรียน</p>
             </div>
         </div>
-        <div class="glass profile-info">
-            <h3>อภินันท์ พงษ์คำ</h3>
-            <p>
-                ปัจจุบันกำลังศึกษาอยู่ระดับชั้นมัธยมศึกษาปีที่ 6
-                ห้อง 1 โรงเรียนเกลี้ยงวิทยา
-            </p>
-            <div class="info-list">
-                <div class="info">
-                    <span>Name</span>
-                    <strong>อภินันท์ พงษ์คำ</strong>
-                </div>
-                <div class="info">
-                    <span>Birthday</span>
-                    <strong>6 สิงหาคม 2008</strong>
-                </div>
-                <div class="info">
-                    <span>Age</span>
-                    <strong>17 ปี</strong>
-                </div>
-                <div class="info">
-                    <span>School</span>
-                    <strong>โรงเรียนเกลี้ยงวิทยา</strong>
-                </div>
-                <div class="info">
-                    <span>Education</span>
-                    <strong>ม.6 ห้อง 1</strong>
-                </div>
+        <div class="activity-card reveal" data-delay="2">
+            <img src="assets/activity-campaign.jpg" alt="กิจกรรมรณรงค์" data-fallback="ACTIVITY 02">
+            <div class="activity-overlay">
+                <small>ACTIVITY 02</small>
+                <h3>กิจกรรมรณรงค์</h3>
+                <p>ร่วมรณรงค์สร้างความเข้าใจและการยอมรับความหลากหลาย ภายใต้แนวคิด "Be Yourself"</p>
             </div>
         </div>
-    </div>
-
-    <div id="activity" class="about-sub">
-        <div class="section-header sub">
-            <h2>กิจกรรม<span class="gradient"></span></h2>
-            <p>ACTIVITY</p>
+        <div class="glass activity-note reveal" data-delay="3">
+            <small>WHAT I LEARNED</small>
+            <p>ได้เรียนรู้การทำงานร่วมกับผู้อื่น การกล้าแสดงออกต่อหน้าสาธารณะ และเห็นคุณค่าของการเปิดใจยอมรับความแตกต่างของแต่ละคน</p>
         </div>
-        <div class="activity-grid activity-grid--asymmetric">
-            <div class="activity-card activity-card--large">
-                <img src="assets/activity-christmas.jpg" alt="กิจกรรมร้องเพลงวันคริสต์มาส" onerror="this.parentElement.classList.add('img-fallback')">
-                <div class="activity-overlay">
-                    <small>ACTIVITY 01</small>
-                    <h3>ร้องเพลงวันคริสต์มาส</h3>
-                    <p>ร่วมกิจกรรมร้องเพลงและแสดงในงานเฉลิมฉลองวันคริสต์มาสของโรงเรียน</p>
-                </div>
-            </div>
-            <div class="activity-card">
-                <img src="assets/activity-campaign.jpg" alt="กิจกรรมรณรงค์" onerror="this.parentElement.classList.add('img-fallback')">
-                <div class="activity-overlay">
-                    <small>ACTIVITY 02</small>
-                    <h3>กิจกรรมรณรงค์</h3>
-                    <p>ร่วมรณรงค์สร้างความเข้าใจและการยอมรับความหลากหลาย ภายใต้แนวคิด "Be Yourself"</p>
-                </div>
-            </div>
-            <div class="glass activity-note">
-                <small>สิ่งที่ได้จากกิจกรรม</small>
-                <p>
-                    ได้เรียนรู้การทำงานร่วมกับผู้อื่น การกล้าแสดงออกต่อหน้าสาธารณะ
-                    และเห็นคุณค่าของการเปิดใจยอมรับความแตกต่างของแต่ละคน
-                    ทั้งสองกิจกรรมสอนให้เข้าใจว่าความมั่นใจในตัวเองและความเข้าใจผู้อื่น
-                    เป็นสิ่งสำคัญพอ ๆ กัน
-                </p>
-            </div>
-        </div>
-        <div class="glass video-card">
+        <div class="glass video-card reveal" data-delay="2">
             <div class="video-frame">
-                <iframe
-                    src="https://www.youtube.com/embed/Z55vxrVi-9c"
-                    title="Knowledge Video"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-                </iframe>
+                <iframe src="https://www.youtube.com/embed/Z55vxrVi-9c" title="Knowledge Video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
         </div>
     </div>
@@ -182,119 +189,83 @@
 <!-- =================================================
      WORKS
 ================================================= -->
-<section id="works" class="page">
+<section id="works" class="page reveal">
     <div class="section-header">
-        <h2>เกียรติบัตร<span class="gradient">และผลงาน</span></h2>
-        <p>CERTIFICATES &amp; WORKS</p>
+        <span class="sec-tag">CERTIFICATES &amp; WORKS</span>
+        <h2>เกียรติบัตร <span class="gradient">และผลงาน</span></h2>
+        <div class="sec-line"></div>
     </div>
-    <div class="cert-grid">
-        <div class="glass cert-card">
-            <div class="icon-box">
-                <i data-lucide="award"></i>
-            </div>
-            <div class="cert-body">
+    <div class="works-grid">
+        <article class="glass works-card reveal" data-delay="1">
+            <div class="icon-box"><i data-lucide="award"></i></div>
+            <div class="works-body">
                 <h3>เกียรติบัตร</h3>
                 <p>รวบรวมเกียรติบัตร รางวัล และหลักฐานการเข้าร่วมกิจกรรม</p>
-                <a class="btn cert-more" href="#works">
-                    ดูเพิ่มเติม
-                    <i data-lucide="arrow-right"></i>
-                </a>
+                <a class="btn" href="javascript:void(0)">ดูเพิ่มเติม<i data-lucide="arrow-right"></i></a>
             </div>
-        </div>
-        <div class="glass cert-card">
-            <div class="icon-box">
-                <i data-lucide="folder"></i>
-            </div>
-            <div class="cert-body">
+        </article>
+        <article class="glass works-card reveal" data-delay="2">
+            <div class="icon-box"><i data-lucide="folder"></i></div>
+            <div class="works-body">
                 <h3>ผลงาน</h3>
                 <p>ผลงานที่สร้างขึ้นจากการเรียนรู้และการทดลองทำด้วยตนเอง</p>
-                <a class="btn cert-more" href="https://spft-section.github.io/Sections/" target="_blank" rel="noopener">
-                    เข้าชม SECTiON
-                    <i data-lucide="arrow-right"></i>
-                </a>
-                <a class="btn cert-more cert-more-secondary" href="https://github.com/SPFT-section/Sections" target="_blank" rel="noopener">
-                    GitHub
-                    <i data-lucide="arrow-right"></i>
-                </a>
+                <a class="btn" href="https://spft-section.github.io/Sections/" target="_blank" rel="noopener">เข้าชม SECTiON<i data-lucide="arrow-right"></i></a>
+                <a class="btn secondary" href="https://github.com/SPFT-section/Sections" target="_blank" rel="noopener">GitHub<i data-lucide="arrow-right"></i></a>
             </div>
-        </div>
-        <div class="glass cert-card">
-            <div class="icon-box">
-                <i data-lucide="presentation"></i>
-            </div>
-            <div class="cert-body">
+        </article>
+        <article class="glass works-card reveal" data-delay="3">
+            <div class="icon-box"><i data-lucide="presentation"></i></div>
+            <div class="works-body">
                 <h3>การนำเสนอ</h3>
                 <p>ผลงานและกิจกรรมที่เกี่ยวข้องกับการนำเสนอ</p>
-                <a class="btn cert-more" href="#works">
-                    ดูเพิ่มเติม
-                    <i data-lucide="arrow-right"></i>
-                </a>
+                <a class="btn" href="javascript:void(0)">ดูเพิ่มเติม<i data-lucide="arrow-right"></i></a>
             </div>
-        </div>
-        <div class="glass cert-card">
-            <div class="icon-box">
-                <i data-lucide="book-open-text"></i>
-            </div>
-            <div class="cert-body">
+        </article>
+        <article class="glass works-card works-card--feature reveal" data-delay="4">
+            <div class="icon-box"><i data-lucide="book-open-text"></i></div>
+            <div class="works-body">
+                <span class="mini-tag">FEATURED</span>
                 <h3>SECTiON</h3>
                 <p>เว็บแอปเขียนและอ่านนิยายแบบ Local-First สไตล์ Glassmorphism พัฒนาด้วย React รองรับ Light/Dark Mode ระบบบัญชีผู้ใช้พร้อมกู้คืนรหัสผ่าน และโหมด Guest</p>
-                <a class="btn cert-more" href="https://spft-section.github.io/Sections/" target="_blank" rel="noopener">
-                    เข้าชมเว็บไซต์
-                    <i data-lucide="arrow-right"></i>
-                </a>
-                <a class="btn cert-more cert-more-secondary" href="https://github.com/SPFT-section/Sections" target="_blank" rel="noopener">
-                    GitHub
-                    <i data-lucide="arrow-right"></i>
-                </a>
+                <div class="chip-row">
+                    <span class="chip">React</span><span class="chip">Local-First</span><span class="chip">Glassmorphism</span>
+                </div>
+                <a class="btn primary" href="https://spft-section.github.io/Sections/" target="_blank" rel="noopener">เข้าชมเว็บไซต์<i data-lucide="arrow-right"></i></a>
+                <a class="btn secondary" href="https://github.com/SPFT-section/Sections" target="_blank" rel="noopener">GitHub<i data-lucide="arrow-right"></i></a>
             </div>
-        </div>
+        </article>
     </div>
 </section>
 
 <!-- =================================================
      KNOWLEDGE
 ================================================= -->
-<section id="knowledge" class="page">
+<section id="knowledge" class="page reveal">
     <div class="section-header">
-        <h2>คลัง<span class="gradient">ความรู้</span></h2>
-        <p>KNOWLEDGE HUB</p>
+        <span class="sec-tag">KNOWLEDGE HUB</span>
+        <h2>คลัง <span class="gradient">ความรู้</span></h2>
+        <div class="sec-line"></div>
     </div>
     <div class="knowledge-grid">
-        <a class="glass knowledge" href="https://developer.mozilla.org/" target="_blank" rel="noopener">
-            <div class="knowledge-icon">
-                <i data-lucide="code-2"></i>
-            </div>
-            <div>
-                <h3>เทคโนโลยีและเว็บไซต์</h3>
-                <p>HTML, CSS, JavaScript และการสร้างเว็บไซต์</p>
-            </div>
+        <a class="glass knowledge reveal" data-delay="1" href="https://developer.mozilla.org/" target="_blank" rel="noopener">
+            <div class="knowledge-icon"><i data-lucide="code-2"></i></div>
+            <div><h3>เทคโนโลยีและเว็บไซต์</h3><p>HTML, CSS, JavaScript และการสร้างเว็บไซต์</p></div>
+            <i class="arrow" data-lucide="arrow-up-right"></i>
         </a>
-        <a class="glass knowledge" href="https://ai.google/" target="_blank" rel="noopener">
-            <div class="knowledge-icon">
-                <i data-lucide="brain-circuit"></i>
-            </div>
-            <div>
-                <h3>ปัญญาประดิษฐ์</h3>
-                <p>ความรู้เกี่ยวกับ AI และเทคโนโลยีสมัยใหม่</p>
-            </div>
+        <a class="glass knowledge reveal" data-delay="2" href="https://ai.google/" target="_blank" rel="noopener">
+            <div class="knowledge-icon"><i data-lucide="brain-circuit"></i></div>
+            <div><h3>ปัญญาประดิษฐ์</h3><p>ความรู้เกี่ยวกับ AI และเทคโนโลยีสมัยใหม่</p></div>
+            <i class="arrow" data-lucide="arrow-up-right"></i>
         </a>
-        <a class="glass knowledge" href="https://www.khanacademy.org/computing" target="_blank" rel="noopener">
-            <div class="knowledge-icon">
-                <i data-lucide="terminal"></i>
-            </div>
-            <div>
-                <h3>การเขียนโปรแกรม</h3>
-                <p>Programming และ Computer Science</p>
-            </div>
+        <a class="glass knowledge reveal" data-delay="1" href="https://www.khanacademy.org/computing" target="_blank" rel="noopener">
+            <div class="knowledge-icon"><i data-lucide="terminal"></i></div>
+            <div><h3>การเขียนโปรแกรม</h3><p>Programming และ Computer Science</p></div>
+            <i class="arrow" data-lucide="arrow-up-right"></i>
         </a>
-        <a class="glass knowledge" href="https://www.khanacademy.org/" target="_blank" rel="noopener">
-            <div class="knowledge-icon">
-                <i data-lucide="lightbulb"></i>
-            </div>
-            <div>
-                <h3>การเรียนรู้ด้วยตนเอง</h3>
-                <p>แหล่งเรียนรู้ออนไลน์และการพัฒนาทักษะ</p>
-            </div>
+        <a class="glass knowledge reveal" data-delay="2" href="https://www.khanacademy.org/" target="_blank" rel="noopener">
+            <div class="knowledge-icon"><i data-lucide="lightbulb"></i></div>
+            <div><h3>การเรียนรู้ด้วยตนเอง</h3><p>แหล่งเรียนรู้ออนไลน์และการพัฒนาทักษะ</p></div>
+            <i class="arrow" data-lucide="arrow-up-right"></i>
         </a>
     </div>
 </section>
@@ -302,48 +273,41 @@
 <!-- =================================================
      CONTACT
 ================================================= -->
-<section id="contact" class="page">
+<section id="contact" class="page reveal">
     <div class="section-header">
-        <h2>ช่องทาง<span class="gradient">การติดต่อ</span></h2>
-        <p>CONTACT</p>
+        <span class="sec-tag">CONTACT</span>
+        <h2>ช่องทาง <span class="gradient">การติดต่อ</span></h2>
+        <div class="sec-line"></div>
     </div>
     <div class="contact-grid">
-        <div class="glass contact-card">
+        <div class="glass contact-card reveal" data-delay="1">
             <div class="contact-item">
                 <i data-lucide="mail"></i>
-                <div>
-                    <span>EMAIL</span>
-                    <strong>sunmindsssa@gmail.com</strong>
-                </div>
+                <div><span>EMAIL</span><strong>sunmindsssa@gmail.com</strong></div>
+                <button class="copy-btn" data-copy="sunmindsssa@gmail.com" aria-label="คัดลอกอีเมล"><i data-lucide="copy"></i></button>
             </div>
             <div class="contact-item">
                 <i data-lucide="school"></i>
-                <div>
-                    <span>SCHOOL</span>
-                    <strong>โรงเรียนเกลี้ยงวิทยา</strong>
-                </div>
+                <div><span>SCHOOL</span><strong>โรงเรียนเกลี้ยงวิทยา</strong></div>
             </div>
             <div class="contact-item">
                 <i data-lucide="graduation-cap"></i>
-                <div>
-                    <span>EDUCATION</span>
-                    <strong>ม.6 ห้อง 1</strong>
-                </div>
+                <div><span>EDUCATION</span><strong>ม.6 ห้อง 1</strong></div>
             </div>
         </div>
-        <div class="glass contact-card">
+        <div class="glass contact-card cta reveal" data-delay="2">
             <h3>ขอบคุณที่เข้าชม</h3>
-            <p>ขอบคุณสำหรับการเยี่ยมชม Portfolio ของผม</p>
-            <a class="btn primary" href="mailto:sunmindsssa@gmail.com">
-                <i data-lucide="send"></i>
-                ติดต่อผม
-            </a>
+            <p>ขอบคุณสำหรับการเยี่ยมชม Portfolio ของผม หากสนใจสามารถติดต่อได้เสมอครับ</p>
+            <a class="btn primary" href="mailto:sunmindsssa@gmail.com"><i data-lucide="send"></i>ติดต่อผม</a>
         </div>
     </div>
 </section>
 
 </div>
 </main>
+
+<!-- back to top -->
+<button class="backtotop" id="backtotop" aria-label="กลับด้านบน"><i data-lucide="arrow-up"></i></button>
 
 <script src="script.js"></script>
 </body>
